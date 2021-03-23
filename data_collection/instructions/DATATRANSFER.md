@@ -1,13 +1,9 @@
 # General
+This describes the process we used to offload the data from the antlets to external harddrives. 
 
 ## Pickling Data
 We use pickle to compress the image and audio files for transfer off of the antlets. Images and audio should be in folder of this structure:
 - `/mnt/disk3/H3/BS1/img/2019-05/2019-05-01/` ... (one for each day) or `/mnt/disk3/H3/BS1/img/2019-05-01/`
-
-
-
-
-
 - Make sure hpd_mobile.service is stopped on all antlets and pis.
 - I created a network bridge for each of the Antlets.  You can now ssh directly from your computer to the antlet. They were given IP addresses in the CP router in the 192.168.0.20x range (HPD Black)and 192.168.0.21x (HPD Red)  Their hostnames were also changed:
 
