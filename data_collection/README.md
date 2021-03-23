@@ -1,4 +1,4 @@
-This codebase was originally written by [Cory Mosiman](https://github.com/corymosiman12) in 2018.
+This codebase was originally written by [Cory Mosiman](https://github.com/corymosiman12) in 2018.  
 It was maintained and updated by Maggie Jacoby in 2019.
 
 # Introduction
@@ -27,7 +27,8 @@ The Antsle is an industrial server that will contain multiple antlets with diffe
 ~~- 1 antlet will be used as the USRP antlet~~
 
 ## Client Antlets
-~~The client antlets will write env_params to the Influxdb Antlet.  They will additionally write photos and audio data to a virtual drive mounted at `/mnt/vdb/` (as specified by the client.conf `img_audio_root` parameter).~~
+~~The client antlets will write env_params to the Influxdb Antlet.  They will additionally write photos and audio data to a virtual drive mounted at `/mnt/vdb/` (as specified by the client.conf `img_audio_root` parameter).~~  
+
 The client antlets will write env_params, audio, and images locally on the antlet to a virtual drive mounted at `/mnt/vdb/` (as specified by the client.conf `img_audio_root` parameter).
 400 GB HDD has been allocated for the images and audio. More space is needed for longer runs.
 See the [README](https://github.com/mhsjacoby/HPDmobile/blob/main/data_collection/client/README.md) in the client directory for more details.
