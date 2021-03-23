@@ -23,7 +23,6 @@ import sys
 import numpy as np
 import pandas as pd
 from datetime import datetime
-# from PIL import Image
 import pickle
 import gzip
 import json
@@ -31,12 +30,7 @@ import collections
 import scipy.io.wavfile
 import csv
 
-# from gen_argparse import *
-# from my_functions import *
-
 NewAudio = collections.namedtuple('NewAudio', 'day time data')
-
-
 
 
 class ImageExtract():
