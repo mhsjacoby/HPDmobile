@@ -1,6 +1,6 @@
-# HPD-Inference-Audio ReadMe
+# HPDmobile-Processing-Audio
 
-This repository contains the processing and inferencing code for audio files used in the HPDmobile project. 
+This repository contains the processing code for audio files used in the HPDmobile project. 
 
 Helper files used: 
 - gen_argparse.py
@@ -21,10 +21,9 @@ Author: Maggie Jacoby
 ---
 # Repository Contents
 
-## Process-Audio
 Audio was collected in 10-second long .wav files for most homes. A few early homes had 20-second long files. Audio was pickled in some cases, but for most homes raw wav files were transferred directly. 
 
-- Process_count_Audio.py
+- process_count_audio.py
 
     This code takes raw wav files and processes them, outputting downsampled and/or dicrete cosine transformed data in arrays. The arrays are saved as .npz files on an hourly basis. Downsampled files are intended to be used to for the public database (`*_ds.npz`) and for inferencing. 
 
