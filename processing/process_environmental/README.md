@@ -1,6 +1,6 @@
 # HPD-Processing-Environmental
 
-This repository contains the environmental processing and inferencing code for the HPDmobile project.
+This repository contains the environmental processing code for the HPDmobile project.
 
 Helper files used: 
 - gen_argparse.py
