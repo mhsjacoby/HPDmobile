@@ -1,29 +1,21 @@
 """
 save_as_wav.py
 Author: Maggie Jacoby
-
-
 """
 import os
 import sys
 import csv
+import time
 from glob import glob
 import numpy as np
 import pandas as pd
 from datetime import datetime
-
 import scipy.io.wavfile
-# from scipy.fftpack import dct
-# from sklearn.preprocessing import scale
-
 import warnings
 warnings.filterwarnings("ignore")
 
-# from AudioFunctions import *
 from gen_argparse import *
 from my_functions import *
-
-import time
 
 
 if __name__ == '__main__':
