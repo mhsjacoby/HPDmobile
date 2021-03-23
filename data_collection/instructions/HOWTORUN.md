@@ -1,3 +1,5 @@
+This describes how to start the services on the sensor hubs and antlets.
+
 # General
 All services on the raspberry pi's and antlet VM's should always be STOPPED before powering off the devices:
 - `$ sudo systemctl stop hpd_mobile.service`
