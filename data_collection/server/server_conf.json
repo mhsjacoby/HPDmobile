@@ -1,0 +1,10 @@
+{
+    "listen_port": "1026",
+    "read_interval": "10", 
+    "root": "/home/pi/Github/server",
+    "audio_root": "/home/pi/audio",
+    "img_root": "/home/pi/img",
+    "env_params_root": "/home/pi/env_params",
+    "stream_type": "mjpeg",
+    "audio_tape_length": 10
+}
