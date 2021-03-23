@@ -1,4 +1,4 @@
-# HPDmobile-Processing-Audio
+# HPDmobile-Processing-Images
 
 This repository contains the processing code for audio files used in the HPDmobile project. 
 
