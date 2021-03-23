@@ -1,0 +1,26 @@
+{
+    "servers": {
+        "RS1": "192.168.0.111",
+        "RS2": "192.168.0.112",
+        "RS3": "192.168.0.113",
+        "RS4": "192.168.0.114",
+        "RS5": "192.168.0.115",
+        "RS6": "192.168.0.116",
+        "BS1": "192.168.0.101",
+        "BS2": "192.168.0.102",
+        "BS3": "192.168.0.103",
+        "BS4": "192.168.0.104",
+        "BS5": "192.168.0.105",
+        "BS6": "192.168.0.106"
+    },
+    "collect_interval_min": "2",
+    "env_params_read_interval_sec": "10",
+    "img_audio_root": "/mnt/disk2/",
+    "store_location": "/root/",
+    
+    "stream_type": "mjpeg",
+    "listen_port": "1026",
+    "pi_img_audio_root": "/home/pi",
+    "audio_tape_length": 10,
+    "imgs_per_min": 60
+}
