@@ -21,8 +21,10 @@ Author: Maggie Jacoby
     Cleaned CSVs contain infomration (binary) on which time points/modalities were cleaned
 
 - HomeDataClasses.py
+
     Contains a class that which takes care of the reading and processing of the env files.
 
 - cleanData.py
+
     Contains a function that is called in the HomeData class and actually performs the data cleaning. **Write more about this**
 
