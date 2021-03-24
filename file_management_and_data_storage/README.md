@@ -14,10 +14,11 @@ Author: Maggie Jacoby
 - process_data_for_repo.ipynb
 
     A jupyter notebook that was run right before publishing the data. Depending on the modality, this code may:
-        - rename the directories
-        - subset the days of interest
-        - copy files to a new location
-        - zip the final data
+
+    - rename the directories
+    - subset the days of interest
+    - copy files to a new location
+    - zip the final data
 
 ## Summarize Data
 Some code for reading in the files name or file contents, and determining the completeness of the modalities.
