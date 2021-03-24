@@ -1,6 +1,6 @@
 # HPDmobile Processing
 
-This repository contains the all the processing code used for data in the HPDmobile project. 
+This repository contains the all the code used to process data collected in the HPDmobile project, before publishing publicly. 
 
 Helper files used: 
 - gen_argparse.py
@@ -37,11 +37,9 @@ Audio was collected in 10-second long .wav files for most homes. A few early hom
 
     Takes 20 second wav files and splits into two 10 seconds files (appropriately timestamped).
 
----
-## Images
-After images were collected by the HPDmobile system, they were either pickled and then transferred (most of the homes), or transferred directly (first few homes). The code here resizes the images. Images are saved as PNG. 
 
-Images were captured in grey-scale, every second, at 336x336 pixels.
+## Images
+Images were captured in grey-scale, every second, at 336x336 pixels. After images were collected by the HPDmobile system, they were either pickled and then transferred (most of the homes), or transferred directly (first few homes). The code here resizes the images. Images are saved as PNG. 
 
 - Image_Resize.py / Image_Resize_unpickled.py
 
@@ -53,7 +51,7 @@ Images were captured in grey-scale, every second, at 336x336 pixels.
 
     This code looks at the inferences created (at 1 second frequency) and copies the files into labeled folders, depending on classification confidence level.
 
----
+
 ## Environmental
 Environmental data was captured every 10 seconds and stored in JSON files. The code here reads in the JSON files and creates pandas data frames. Processing (such as outlier removal) can be performed if desired. Data is stored as CSV. 
 
@@ -75,7 +73,7 @@ Environmental data was captured every 10 seconds and stored in JSON files. The c
 
     Contains a function that is called in the HomeData class and actually performs the data cleaning. **Write more about this**
 
----
+
 ## Occupancy
 
 - calculate_groundtruth.py 
