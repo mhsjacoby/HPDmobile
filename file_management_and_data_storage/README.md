@@ -24,4 +24,4 @@ Some code for reading in the files name or file contents, and determining the co
 
 
 ## File Handling
-Code (run in jupyter notebooks) for rename and moving files).
+Code (run in jupyter notebooks) for renaming and moving files.
