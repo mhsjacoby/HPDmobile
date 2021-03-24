@@ -1,6 +1,6 @@
-# HPDmobile Validation
+# Validate Image Labels
 
-This repository contains the all the code used to process data collected in the HPDmobile project, before publishing publicly. 
+Code for validating the zone based image labels.
 
 Helper files used: 
 - gen_argparse.py
@@ -11,24 +11,29 @@ Author: Maggie Jacoby
 ---
 # Repository Contents
 
-## Auto-labeling
+- check_zone_labels.py
 
-- copy_audio.py
+    This code randomly samples the zone labeled images (in CSV form), generating subsets that are supposed to be occupied or vacant. It copies the actual images into a new folder, so a human can confirm. It also generates CSVs specifying how the images were separated. 
 
-    This code is similar to `copy_img.py`. It takes in the IMAGE inferences (the 10-second frequency final CSVs, eg stored in `.../H6-black/Inference_DB/BS2/img_inf/` ) and copies the actual audio files that occur in occupied image blocks into labeled folders (eg `.../H6-black/Auto_Labeled/audio_BS2/`). Human verification is then used to confirm noise. 
+- validate_img_labels.py
 
-- audio_to_audio_copy.py
+    This code takes folders of images that have been manually verified, and compares the contents of the folders against the CSV generated previously. It computes statistics on accuracy, false positive rate, etc. 
 
-    This code takes files that have been separated and labeled (manually or automatically from `copy_audio.py`), and copies the same timestamp audio wave for a different hub into a labeled folder. 
+- verify_images.py
 
-- copy_move_audio.py
-
-
-- plot_audio.py
+    This script looks at images predicted to be occupied, along with the ground truth files, and find times when the house is supposed to be empty, but a person was detected with the inference algorithm. The timestamps of these are printed to a CSV, so that a human can manually verify if someone is in the image, and figure out why it wasn't captured in the ground truth.
 
 
-## Validate Image Labels
+## Image_inference
+    This folder contains all the files that are used for generating inferences based on images. 
 
+    - confidence.py
 
+        This is the main inferencing code, which looks at images, and generates a probability of occupied using the [YOLOv5](https://github.com/ultralytics/yolov5) object detection algorithm. 
 
-## Validate Processed Audio
+    - post_img.py
+        
+        This code takes the inferences generated on a one-second basis, and aggegates them to a ten-second basis.
+
+    *yolov5*
+        This folder contains all the code for the yolov5 algorithm, and was forked from them. 
