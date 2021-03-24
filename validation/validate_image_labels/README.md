@@ -36,4 +36,5 @@ This folder contains all the files that are used for generating inferences based
     This takes in the daywise 1-second image csvs and averages to get a 10-second frequency. Uses maximum over the 10 seconds for both occupancy and probability. Output is stored in `.../H6-black/Inference_DB/BS3/img_inf/` in day-wise CSVs (8,640 long). Missing values are nan in pthon, blanks in the csv. Dark images below a certain threshold are shown as missing.
 
 ### yolov5
+
     This folder contains all the code for the yolov5 algorithm. It was downloaded from the Ultralytics github, and there have been only minor changes made.
