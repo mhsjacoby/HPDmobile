@@ -14,3 +14,4 @@ This is code that was used to process the collected data types, both to make it 
 This contains the workflows for auto-generating subsets of labeled audio, code for validating the labeled images, and the inferencing code that was used to validate processed audio files. 
 
 ### File Management and Data Storage
+This directory contains code for managing data, such as moving or renaming files, along with code for summarizing the completeness of the data. 
