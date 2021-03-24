@@ -60,10 +60,9 @@ class SubsetImages():
         return path_name
     
 
-    def sample_imgs(self, full_df, img_type):#, sample_size=100):
+    def sample_imgs(self, full_df, img_type):
         im, sample_size = type_info[img_type]['label'], type_info[img_type]['sample']
         df = full_df.loc[full_df['occupied'] == im]
-        # print(f'List of Hubs: {hubs}\nSampling {num_samples} images per hub')
         times = df.index
         ts = sorted(sample(list(times), sample_size))
         sampled_df = df.loc[ts]
@@ -75,7 +74,6 @@ if __name__ == '__main__':
 
     parser.add_argument('-labels','--labels', default='', type=str, help='path of zone labels') 
     parser.add_argument('-drive','--drive', default='', type=str, help='path of stored images') 
-    # parser.add_argument('-save_location', '--save', default='', type=str, help='location to store files (if different from path')
     parser.add_argument('-hub', '--hub', default='', nargs='+', type=str, help='if only one hub... ')
 
     args = parser.parse_args()
@@ -83,16 +81,12 @@ if __name__ == '__main__':
     labels_path = args.labels
     H_num = os.path.basename(labels_path.strip('/'))
     img_path = glob(os.path.join('/Volumes', args.drive, f'{H_num}-*'))[0]
-    # img_path = glob(os.path.join('/Volumes', args.drive, f'H4-*'))[0]
 
     if len(args.hub) > 0:
         hubs = args.hub
     else:
         hub_list = sorted(glob(os.path.join(labels_path, '*_ZONELABELS', '*_ZONELABELS')))
         hubs = [os.path.basename(hub).split('_')[1] for hub in hub_list]
-
-    # num_samples = int(600/len(hubs)) if len(hubs) > 3 else 120
-    # print(f'List of Hubs: {hubs}\nSampling {num_samples} images per hub')
     
     labeled_list = dict(occupied=[], vacant=[])
     for hub in hubs:
@@ -113,24 +107,13 @@ if __name__ == '__main__':
         full_img_dfs = pd.concat(img_list, axis=0)
         print(f'{len(full_img_dfs)} total infererences')
         hub_imgs = os.path.join(img_path, hub, 'img-unpickled')
-        # hub_imgs = os.path.join(img_path, hub, 'img-downsized') # for H2 only
-
 
         SI = SubsetImages(img_folder=hub_imgs)
         occ_samples = SI.sample_imgs(full_df=full_img_dfs, img_type='occupied')
         vac_samples = SI.sample_imgs(full_df=full_img_dfs, img_type='vacant')
-        # print(len(occ_samples), len(vac_samples))
-
-        # print(len(occ_samples))
-        # sys.exit()
-        # samples = SI.sample_imgs(df=full_img_dfs, sample_size=num_samples)
-
-        
 
         for occ, df_occ in zip(['occupied', 'vacant'], [occ_samples, vac_samples]):
             save_loc = os.path.join(save_root, H_num, occ, hub)
-            # df_occ = samples.loc[samples['occupied'] == i].copy()
-            print(occ, len(df_occ))
             ts = list(df_occ.index)
             SI.copy_imgs(ts, save_loc)
             df_occ['hub'] = hub
