@@ -2,6 +2,8 @@
 aggregate_subset_labels.py
 Author: Maggie Jacoby
 Date: 2021-03-16
+
+Samples labeled images, pulling a fixed 
 """
 
 
@@ -17,17 +19,17 @@ from datetime import datetime, timedelta
 import random
 from random import sample
 
-random.seed(1)
-save_root = f'/Users/maggie/Desktop/LabeledImages'
+random.seed(3)
+save_root = f'/Users/maggie/Desktop/LabeledImages/3-30'
 
 type_info = dict(
                 occupied=dict(
                             label=1, 
-                            sample=150
+                            sample=100
                             ),
                 vacant=dict(
                             label=0,
-                            sample=60
+                            sample=100
                             )
                 )
 
@@ -107,6 +109,8 @@ if __name__ == '__main__':
         full_img_dfs = pd.concat(img_list, axis=0)
         print(f'{len(full_img_dfs)} total infererences')
         hub_imgs = os.path.join(img_path, hub, 'img-unpickled')
+        # hub_imgs = os.path.join(img_path, hub, 'img-downsized')
+
 
         SI = SubsetImages(img_folder=hub_imgs)
         occ_samples = SI.sample_imgs(full_df=full_img_dfs, img_type='occupied')

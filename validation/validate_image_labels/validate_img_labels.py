@@ -49,13 +49,13 @@ def get_metrics(p, n, fp, fn):
     TNR = tn/(tn+fp) if tn+fp > 0 else 0.0
     FNR = fn/(tp+fn) if tp+fn > 0 else 0.0
 
-    return {'accuracy': acc, 'FPR': FPR, 'TNR': TNR, 'FNR': FNR, 'TPR': TPR, 
+    return {'accuracy': acc, 'TPR': TPR, 'TNR': TNR, 'FPR': FPR, 'FNR': FNR,  
             'f1': f1, 'f1_rev': f1_rev, 'tp': tp, 'fp': fp, 'fn': fn, 'tn': tn,
             'occ': p, 'vac': n, 'total': p+n}
 
 
 # path = '/Users/maggie/Desktop/ImageLabeling/LabeledImages_20perc'
-path = '/Users/maggie/Desktop/LabeledImages'
+path = '/Users/maggie/Desktop/LabeledImages/3-30'
 
 labels = os.path.join(path, 'Summaries', 'AsLabeled')
 homes = sorted(glob(os.path.join(path, 'H*')))
@@ -72,6 +72,7 @@ for home in homes:
     hubs = sorted(glob(os.path.join(home, 'vacant/*S*')))
     hubs = [os.path.basename(h) for h in hubs]
     hubs_summary = {}
+    all_P, all_N, all_fp, all_fn = 0,0,0,0
     for hub in hubs:
 
         FN, P, predicted_occ = get_difference(df=all_preds, title='occupied', val=1)
@@ -90,18 +91,30 @@ for home in homes:
         # print(full_df)
         full_df.to_csv(os.path.join(save_path, f'{H_num}_{hub}_zone_groundtruth.csv'), index='timestamp')
         hubs_summary[hub] = get_metrics(p=len(P), n=len(N), fp=len(FP), fn=len(FN))
+        all_P += len(P)
+        all_N += len(N)
+        all_fp += len(FP)
+        all_fn += len(FN)
         
 
+    hubs_summary['all'] = get_metrics(p=all_P, n=all_N, fp=all_fp, fn=all_fn)
 
     summary_df = pd.DataFrame(hubs_summary)
+    # print(summary_df)
+    mean_hubs[H_num] = summary_df['all']
+    # print(summary_df['all'])
+    # sys.exit()
     summary_df = summary_df.transpose()
     summary_df['home'] = H_num
     summary_df.index.name = 'hub'
     summary_df.set_index('home', append=True, inplace=True)
     summary_df = summary_df.reorder_levels(['home', 'hub'])
+    # print(summary_df.loc['all'])
     summary_df.to_csv(os.path.join(path, 'Summaries', f'{H_num}_metrics.csv'), index='home')
-    mean_hubs[H_num] = summary_df.mean(axis=0)
+#     mean_hubs[H_num] = hubs_summary.loc[hubs_summary['hub'] == 'all']
+#     # mean_hubs[H_num] = summary_df.mean(axis=0)
 
 mean_df = pd.DataFrame(mean_hubs)
+# print(mean_df)
 mean_df.to_csv(os.path.join(path, 'Summaries', 'complete_metrics.csv'), index='hub')
 
