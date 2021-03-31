@@ -23,6 +23,10 @@ Author: Maggie Jacoby
 
     This script looks at images predicted to be occupied, along with the ground truth files, and find times when the house is supposed to be empty, but a person was detected with the inference algorithm. The timestamps of these are printed to a CSV, so that a human can manually verify if someone is in the image, and figure out why it wasn't captured in the ground truth.
 
+- cv_zone_thresholds.py & acc_at_all_thresolds.py
+
+    These files find the best threshold for image labels based on a specified metric, and print the metrics for all hubs given all thresholds.
+
 
 ## Image_inference
 This folder contains all the files that are used for generating inferences based on images. Image inferencing is done via YOLO (You Only Look Once) object detection algorithm. Additional documentation is in `/yolov5/Source-Documentation`. The trained models and weights may not be updated online because of their size. 
