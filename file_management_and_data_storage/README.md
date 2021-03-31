@@ -11,7 +11,7 @@ Author: Maggie Jacoby
 ---
 # Repository Contents
 
-- process_data_for_repo.ipynb
+- process_HPD_files_for_storage.ipynb
 
     A jupyter notebook that was run right before publishing the data. Depending on the modality, this code may:
 
@@ -19,6 +19,7 @@ Author: Maggie Jacoby
     - subset the days of interest
     - copy files to a new location
     - zip the final data
+    - writes the zone labels
 
 ## Summarize Data
 Some code for reading in the files name or file contents, and determining the completeness of the modalities.
