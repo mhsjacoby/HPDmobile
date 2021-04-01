@@ -2,15 +2,6 @@
 gen_argparse.py
 general argument parsers that are used in a variety of detection, inference and file reading codes. 
 usage: python3 arg_test.py -path /Volumes/TOSHIBA-21/H1-red/ -hub RS1 RS2
-
-employed in:
-	- copy_img.py
-	- copy_audio.py
-
-not yet in:
-	- detect.py and confidence.py (image detection using yolov5)
-	- audio classification
-	- grouping files
 """
 
 
