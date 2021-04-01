@@ -57,5 +57,4 @@ All env_params from the clients are being written to the hpd_mobile database run
 3. run `> use hpd_mobile`
 4. Now you can make similar queries as you would in a RDBMS.  For instance `> select * from env_params where server_id='S3'`
 
-## USRP Antlet
 
