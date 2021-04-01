@@ -1,5 +1,4 @@
-This codebase was originally written by [Cory Mosiman](https://github.com/corymosiman12) in 2018.  
-It was maintained and updated by Maggie Jacoby in 2019.
+The original development of this codebase was performed [here](https://github.com/corymosiman12/ARPA-E-Sensor) and [here](https://github.com/mhsjacoby/ARPA-E-Sensor), but commit history was overwritten and the code migrated to its current location for clarity and maintenance purposes. 
 
 # Introduction
 This repository contains both the client and server side code for the ARPA-E-Sensor project HPDMobile, along with setup guides for configuring the Antsle 'antlets' (VM's).
