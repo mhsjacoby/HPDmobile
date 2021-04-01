@@ -1,6 +1,6 @@
 # HPDmobile
 
-This repository contains the all the code used in connection with the mobile human presense detection system (HPDmobile) for residential occupancy detection. 
+This repository contains the all the code used in connection with the mobile human presence detection system (HPDmobile) for residential occupancy detection. 
 
 Data, which included images, sound, and indoor environmental readings, was collected from inside of residential homes. The code in this repository is divided as follows:
 
