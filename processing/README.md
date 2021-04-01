@@ -6,8 +6,6 @@ Helper files used:
 - gen_argparse.py
 - my_functions.py
 
-Author: Maggie Jacoby
-
 ---
 # Repository Contents
 
