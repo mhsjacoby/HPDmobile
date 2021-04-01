@@ -5,8 +5,7 @@ This repository contains the all the code used to get generate summaries about t
 Helper files used: 
 - gen_argparse.py
 - my_functions.py
-
-Author: Maggie Jacoby
+- start_end_dates.json
 
 ---
 # Repository Contents
