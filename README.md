@@ -1,3 +1,6 @@
+https://zenodo.org/badge/DOI/10.5281/zenodo.4655276.svg
+
+
 # HPDmobile
 
 This repository contains the all the code used in connection with the mobile human presence detection system (HPDmobile) for residential occupancy detection. 
