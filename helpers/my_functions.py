@@ -1,3 +1,10 @@
+"""
+my_functions.py
+Author: Maggie Jacoby
+
+A few commonly used functions. These were phased out in later iterations of the code
+"""
+
 import os
 
 def mylistdir(directory, bit='', end=True):
