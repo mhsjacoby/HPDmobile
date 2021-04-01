@@ -5,7 +5,9 @@ This repository contains the all the code used in connection with the mobile hum
 Data, which included images, sound, and indoor environmental readings, was collected from inside of residential homes. The code in this repository is divided as follows:
 
 ### Data Collection
-This is the code that was used to collect the data, and includes how tos and set-up instructions for the data acquisition system, which was based on Raspberry Pis.
+This is the code that was used to collect the data, and includes how-tos and set-up instructions for the data acquisition system, which was based on Raspberry Pis. 
+
+The original development of this codebase was performed [here](https://github.com/corymosiman12/ARPA-E-Sensor) and [here](https://github.com/mhsjacoby/ARPA-E-Sensor), but commit history was overwritten and the code migrated to its current location for clarity and maintenance purposes. 
 
 ### Processing
 This is code that was used to process the collected data types, both to make it easier to use, and to obfuscate images and noise, and remove any personally identifiable information.
@@ -15,3 +17,6 @@ This contains the workflows for auto-generating subsets of labeled audio, code f
 
 ### File Management and Data Storage
 This directory contains code for managing data, such as moving or renaming files, along with code for summarizing the completeness of the data. 
+
+### Helpers
+Contains some commonly used functions and JSON files with information used in subsetting and labeling the data.
