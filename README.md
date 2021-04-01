@@ -7,8 +7,6 @@ Data, which included images, sound, and indoor environmental readings, was colle
 ### Data Collection
 This is the code that was used to collect the data, and includes how-tos and set-up instructions for the data acquisition system, which was based on Raspberry Pis. 
 
-The original development of this codebase was performed [here](https://github.com/corymosiman12/ARPA-E-Sensor) and [here](https://github.com/mhsjacoby/ARPA-E-Sensor), but commit history was overwritten and the code migrated to its current location for clarity and maintenance purposes. 
-
 ### Processing
 This is code that was used to process the collected data types, both to make it easier to use, and to obfuscate images and noise, and remove any personally identifiable information.
 
