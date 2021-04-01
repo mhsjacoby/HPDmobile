@@ -5,8 +5,7 @@ Code for validating the zone based image labels.
 Helper files used: 
 - gen_argparse.py
 - my_functions.py
-
-Author: Maggie Jacoby
+- zone_thresholds.json
 
 ---
 # Repository Contents
